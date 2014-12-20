@@ -16,7 +16,7 @@ Template: enfold
 #header_main img{
 	width:auto;
 	max-height:45px;
-	margin-top:12px;
+	margin-top:9px;
 }
 #main{
 	margin-top:-70px;
@@ -65,7 +65,7 @@ Template: enfold
 }
 #top .av-subnav-menu > li:after{
 	content: ' ';
-	background: inherit;
+	background: inherit !important;
 	height:10px;
 	width: 12px;
 	margin-top:-3px;
@@ -227,4 +227,36 @@ footer.container_wrap.socket_color{
 		width:100%;
 		float:none !important;
 	}
+}
+
+/* footer menu */
+#footer-menu-bw{
+	margin-top:30px;
+	position:static !important;
+	background: #fff !important;
+	color:#000 !important;
+	border:none !important;
+}
+#footer-menu-bw ul{
+	background:none !important;
+}
+#footer-menu-bw li{
+	background:none !important;
+	border-color: transparent !important;
+}
+#footer-menu-bw li a{
+	background:none !important;
+	border-color: #000 !important;
+}
+#top #footer-menu-bw .av-subnav-menu > li:after{
+	background: #fff !important;
+}
+#top #footer-menu-bw.av-submenu-container .container:after{
+	background: #fff !important;
+}
+#top #footer-menu-bw.av-submenu-container .container a{
+	color:#000 !important;
+}
+#top #footer-menu-bw.av-submenu-container a.nav-active{
+	border-bottom:none;
 }
