@@ -15,7 +15,7 @@ $(document).ready(function(){
 	for (var i=0; i < aChildren.length; i++) {    
 		var aChild = aChildren[i];
 		var ahref = $(aChild).attr('href');
-		aArray.push(ahref);
+		if(ahref.indexOf('http') !== 0) aArray.push(ahref);
 	} // this for loop fills the aArray with attribute href values
 
 	$(window).scroll(function(){
