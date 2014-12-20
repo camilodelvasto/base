@@ -192,3 +192,39 @@ div .main_color .tabcontainer .active_tab{
 	background:#000 !important;
 	color: #fff !important;
 }
+
+/* footer styles */
+#footer{
+	background: #fff;
+	color:#000;
+	padding:0;
+}
+#footer .widgettitle{
+	font-family: 'Open sans', sans-serif;
+	color: #000 !important;
+	text-transform: none;
+	letter-spacing: 0;
+	min-height:18px;
+}
+#footer .textwidget a{
+	color:#000 !important;
+}
+#footer .textwidget a:hover{
+	color:#000 !important;
+}
+#footer div .av_one_fourth {
+	margin-left: 0%;
+	width: 25%;
+}
+footer.container_wrap.socket_color{
+	background: none !important;
+	color: #000 !important;
+	border:none;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 980px){
+	#footer div .av_one_fourth {
+		width:100%;
+		float:none !important;
+	}
+}
