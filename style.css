@@ -7,4 +7,83 @@ Author URI: http://www.welti.media
 Template: enfold
 */
 
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 
+/* general customization */
+#header_main{
+	background:#fff;
+}
+#header_main img{
+	width:auto;
+	max-height:45px;
+	margin-top:12px;
+}
+#main{
+	margin-top:-70px;
+}
+.container{
+	padding: 0;
+}
+
+/* main menu customization begin */
+#header_main_alternate{
+	display:none;
+}
+
+#menu-main-menu{
+	font-family: 'Oswald', sans-serif;
+	font-weight:300;
+	font-size:15px;
+	letter-spacing: 0.1em;
+}
+#top .av-subnav-menu > li > a {
+	padding: 10px 10px 0px 12px;
+	border: none;
+}
+#top .av-submenu-container.av-sticky-submenu {
+	height:70px;
+}
+#top .av-subnav-menu > li {
+	padding: 0;
+	background:#d2a;
+	padding-left:10px;
+	margin-right: -5px;
+	width:120px;
+	vertical-align: bottom;
+	height:70px;
+	position:relative;
+}
+#top .av-subnav-menu > li > a{
+	background: #d2a;
+	border-left:1px solid #fff;
+	color:#fff;
+	height:70px;
+}
+#top .av-subnav-menu > li:after{
+	content: ' ';
+	background: #d2a;
+	height:10px;
+	width: 12px;
+	margin-top:-3px;
+	position:absolute;
+	bottom:0;
+}
+#top .av-subnav-menu > li:hover a{
+	border-bottom:6px solid #fff;
+}
+#top .av-subnav-menu > li:hover{
+}
+#top .av-subnav-menu > li:first-child a{
+	border-left:1px solid #fff;
+}
+#top .av-submenu-container.socket_color{
+	border-bottom:none;
+	border-top:none;
+}
+.container.av-menu-mobile-disabled {
+	border:none;
+}
+
+#menu-main-menu a.nav-active{
+
+}
