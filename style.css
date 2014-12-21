@@ -33,7 +33,7 @@ Template: enfold
 	display:none;
 }
 
-#top .av-submenu-container.socket_color{
+#top .av-submenu-container{
 	font-family: 'Oswald', sans-serif;
 	font-weight:300;
 	font-size:15px;
@@ -80,7 +80,7 @@ Template: enfold
 #top .av-subnav-menu > li:first-child a{
 	border-left:1px solid #fff;
 }
-#top .av-submenu-container.socket_color{
+#top .av-submenu-container{
 	border-bottom:none;
 	border-top:none;
 }
@@ -88,7 +88,7 @@ Template: enfold
 	border:none;
 }
 
-#top .av-submenu-container.socket_color .container:after {
+#top .av-submenu-container .container:after {
 	content: "\0020";
 	visibility: visible;
 	background: rgb(205, 18, 137);
@@ -97,7 +97,7 @@ Template: enfold
 	width: 4000px;
 }
 
-#top .av-submenu-container.socket_color a.nav-active{
+#top .av-submenu-container a.nav-active{
 	border-bottom:6px solid #fff !important;
 }
 
@@ -260,3 +260,69 @@ footer.container_wrap.socket_color{
 #top #footer-menu-bw.av-submenu-container a.nav-active{
 	border-bottom:none;
 }
+
+
+
+/* content styles */
+#top .wp-caption {
+	border:none !important;
+	margin: 5px 35px 10px 0;
+}
+#top .wp-caption img {
+	border: none;
+	padding: 0;
+	border-radius: 5px;
+}
+#top .wp-caption-text{
+	background: #000;
+	color: #fff;
+	width: 80%;
+	padding: 18px;
+	font-size: 18px;
+	font-family: Oswald, sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	bottom: -27px;
+	z-index: 12000;
+	position: absolute;
+	margin-left: 10%;
+}
+
+
+#top .avia-caption-title{
+	background: #000;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+	padding:18px;
+	font-size: 18px;
+	font-weight: 300;
+}
+#top .avia-caption.av-slideshow-caption.active-slide{
+	position: absolute;
+	width: 60%;
+	margin-left: 20%;
+	bottom: -40px;
+}
+#top .avia-slideshow-entry_with_sidebar{
+	overflow:visible;
+}
+
+.share-social{
+	display: inline-block;
+	padding-top: 20px;
+	vertical-align: bottom;
+}
+
+
+/* form styles */
+#top .avia_ajax_form .text_input{
+	padding:8px;
+}
+
+#top label {
+	display: block;
+	font-weight: normal;
+	font-size: 12px;
+}
+
