@@ -44,12 +44,12 @@ $(document).ready(function(){
 	});
 
 	var base_colored_menu = function(menuID,hexStart,hexEnd){
-		if($(menuID).hasClass('av-sticky-submenu')){
+		if($(menuID)){
 			var rgb = [hexToRgb(hexStart).r,hexToRgb(hexStart).g,hexToRgb(hexStart).b];
 			var totalItems = $(menuID).find('li').length-1;
 			var diff = [(hexToRgb(hexEnd).r - hexToRgb(hexStart).r)/totalItems, (hexToRgb(hexEnd).g - hexToRgb(hexStart).g)/totalItems,(hexToRgb(hexEnd).b - hexToRgb(hexStart).b)/totalItems];
-			$(menuID).css({'background': rgbToHex(rgb[0],rgb[1],rgb[2])});
-			$(menuID).css({'background': rgbToHex(rgb[0],rgb[1],rgb[2])});
+			$(menuID).css({'background': hexStart});
+			$(menuID).parents('.av-submenu-container').css({'background': hexStart});
 			$('<span class="menu_supplement" style="background: '+hexEnd+'"></span>').insertAfter($(menuID).find('.av-subnav-menu'));
 			$(menuID).find('li').each(function(){
 				$(this).css({'background': rgbToHex(rgb[0],rgb[1],rgb[2])});
@@ -78,7 +78,17 @@ $(document).ready(function(){
 
 		}
 	}
-	base_colored_menu('#sub_menu2','#550053','#a5889b');
+	//base_colored_menu('#sub_menu2','#550053','#a5889b');
+	$('.av-submenu-container > div').each(function(){
+		console.log($(this).data('color_start')+','+$(this).data('color_end'));
+		var color_start = $(this).data('color_start');
+		var color_end = $(this).data('color_end');
+		if (!(color_end || color_start)){
+			color_start =  '#550053';
+			color_end =  '#dd22aa';
+		}
+		base_colored_menu($(this),color_start,color_end);
+	})
 
 	// attach a copy of the first menu to the fotter
 	if('.av-submenu-container'){
