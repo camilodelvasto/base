@@ -88,13 +88,14 @@ Template: enfold
 	border:none;
 }
 
-#top .av-submenu-container .container:after {
+#top .av-submenu-container .container span.menu_supplement {
 	content: "\0020";
 	visibility: visible;
 	background: rgb(205, 18, 137);
 	height: 70px;
 	margin-top: -70px;
 	width: 4000px;
+	display:block;
 }
 
 #top .av-submenu-container a.nav-active{
