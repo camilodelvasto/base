@@ -292,7 +292,7 @@ footer.container_wrap.socket_color{
 	font-family: Oswald, sans-serif;
 	font-style: normal;
 	font-weight: 300;
-	bottom: -27px;
+	bottom: -17px;
 	z-index: 12000;
 	position: absolute;
 	margin-left: 10%;
@@ -312,7 +312,7 @@ footer.container_wrap.socket_color{
 	position: absolute;
 	width: 60%;
 	margin-left: 20%;
-	bottom: -40px;
+	bottom: -30px;
 }
 #top .avia-slideshow-entry_with_sidebar{
 	overflow:visible;
