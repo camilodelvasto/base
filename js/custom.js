@@ -95,13 +95,21 @@ $(document).ready(function(){
 			var color_start = $(this).data('color_start');
 			var color_end = $(this).data('color_end');
 			var color_selection = $(this).data('color_selection');
-			console.log(color_selection);
 			if (color_selection == 'custom-color-menu' && !(color_end || color_start)){
 				color_start =  '#550053';
 				color_end =  '#dd22aa';
 			}
 			base_colored_menu($(this),color_start,color_end);
 		})
+	}();
+
+	var base_color_picture_captions = function(){
+//			css({'background': '#cd0'});
+		$('.avia-caption-title,.wp-caption-text').each(function(){
+			var parentSection = $(this).closest('.avia-section').prevAll('.av-submenu-container').first();
+			$(this).css({'background': $(parentSection).find('.container').data('color_start')});
+//			console.log($(this).parents('.avia-section').prevAll('.av-submenu-container').find('.av-menu-mobile-disabled').data('color_selection'));
+		});
 	}();
 });
 
