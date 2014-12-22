@@ -83,7 +83,9 @@ $(document).ready(function(){
 		console.log($(this).data('color_start')+','+$(this).data('color_end'));
 		var color_start = $(this).data('color_start');
 		var color_end = $(this).data('color_end');
-		if (!(color_end || color_start)){
+		var color_selection = $(this).data('color_selection');
+		console.log(color_selection);
+		if (color_selection == 'custom-color-menu' && !(color_end || color_start)){
 			color_start =  '#550053';
 			color_end =  '#dd22aa';
 		}

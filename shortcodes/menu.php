@@ -125,7 +125,7 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 							"id" 	=> "color_selection",
 							"type" 	=> "select",
 							"std" 	=> "",
-							"subtype" => array( __("Default Color", 'avia_framework' )=>'default', __("Custom Color", 'avia_framework' )=>'custom-color-heading')
+							"subtype" => array( __("Default Color", 'avia_framework' )=>'default', __("Custom Color", 'avia_framework' )=>'custom-color-menu')
 							), 
 					
 					array(	
@@ -134,7 +134,7 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 							"id" 	=> "color_start",
 							"type" 	=> "colorpicker",
 							"std" 	=> "",
-							"required" => array('color_selection','equals','custom-color-heading')
+							"required" => array('color_selection','equals','custom-color-menu')
 						),
 						
 					array(	
@@ -143,7 +143,7 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 							"id" 	=> "color_end",
 							"type" 	=> "colorpicker",
 							"std" 	=> "",
-							"required" => array('color_selection','equals','custom-color-heading')
+							"required" => array('color_selection','equals','custom-color-menu')
 						),
 
 					array(
@@ -257,7 +257,7 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 				
 				// if(!ShortcodeHelper::is_top_level()) return $element;
 				$output .=  avia_new_section($params);
-				$output .= "<div class='container av-menu-mobile-{$mobile} {$submenu_hidden}' data-color_start='{$color_start}' data-color_end='{$color_end}'>{$mobile_button}</a>".$element."</div>";
+				$output .= "<div class='container av-menu-mobile-{$mobile} {$submenu_hidden}' data-color_selection='{$color_selection}' data-color_start='{$color_start}' data-color_end='{$color_end}'>{$mobile_button}</a>".$element."</div>";
 				$output .= avia_section_after_element_content( $meta , 'after_submenu', false, $sticky_div);
 				return $output;
 
