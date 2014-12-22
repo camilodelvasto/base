@@ -43,31 +43,40 @@ $(document).ready(function(){
 		}
 	});
 
-	if($('.av-sticky-submenu')){
-		var rr = 85;
-		var gg = 0;
-		var bb = 83;
-		$('.av-sticky-submenu').css({'background': rgbToHex(rr,gg,bb)});
-		$('.av-sticky-submenu').find('li').each(function(){
-			$(this).css({'background': rgbToHex(rr,gg,bb)});
-			$(this).find('a').css({'background': rgbToHex(rr,gg,bb)});
+	var base_colored_menu = function(menuID,hexStart,hexEnd){
+		if($(menuID).hasClass('av-sticky-submenu')){
+			var rgb = [hexToRgb(hexStart).r,hexToRgb(hexStart).g,hexToRgb(hexStart).b];
+			var totalItems = $(menuID).find('li').length;
+			var diff = [(hexToRgb(hexEnd).r - hexToRgb(hexStart).r)/totalItems, (hexToRgb(hexEnd).g - hexToRgb(hexStart).g)/totalItems,(hexToRgb(hexEnd).b - hexToRgb(hexStart).b)/totalItems];
+			$(menuID).css({'background': rgbToHex(rgb[0],rgb[1],rgb[2])});
+			$(menuID).find('li').each(function(){
+				$(this).css({'background': rgbToHex(rgb[0],rgb[1],rgb[2])});
+				$(this).find('a').css({'background': rgbToHex(rgb[0],rgb[1],rgb[2])});
+				rgb[0] += Math.round(diff[0]);
+				rgb[1] += Math.round(diff[1]);
+				rgb[2] += Math.round(diff[2]);
+			})
+			
+			function componentToHex(c) {
+			    var hex = c.toString(16);
+			    return hex.length == 1 ? "0" + hex : hex;
+			}
 
-			rr += 20;
-			gg += 3;
-			bb += 9;
-		})
-		
-		function componentToHex(c) {
-		    var hex = c.toString(16);
-		    return hex.length == 1 ? "0" + hex : hex;
+			function rgbToHex(r, g, b) {
+			    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+			}
+			function hexToRgb(hex) {
+			    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+			    return result ? {
+			        r: parseInt(result[1], 16),
+			        g: parseInt(result[2], 16),
+			        b: parseInt(result[3], 16)
+			    	} : null;
+			}
+
 		}
-
-		function rgbToHex(r, g, b) {
-		    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-		}
-
 	}
-
+	base_colored_menu('#sub_menu2','#550053','#f5189b');
 
 	// attach a copy of the first menu to the fotter
 	if('.av-submenu-container'){
