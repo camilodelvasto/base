@@ -104,12 +104,19 @@ $(document).ready(function(){
 	}();
 
 	var base_color_picture_captions = function(){
-//			css({'background': '#cd0'});
 		$('.avia-caption-title,.wp-caption-text,input.button').each(function(){
 			var parentSection = $(this).closest('.avia-section').prevAll('.av-submenu-container').first();
 			$(this).css({'background': $(parentSection).find('.container').data('color_start')});
-//			console.log($(this).parents('.avia-section').prevAll('.av-submenu-container').find('.av-menu-mobile-disabled').data('color_selection'));
+			return;
 		});
+	}();
+
+	var base_remove_current_language = function(){
+		$('.menu-mini-menu-container li,.menu-mini-menu-german-container li').each(function(){
+			var href =$(this).find('a').attr('href'); 
+			if(href == '#') $(this).hide();
+			return;
+		})
 	}();
 });
 

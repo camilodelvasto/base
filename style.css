@@ -337,3 +337,54 @@ footer.container_wrap.socket_color{
 	font-size: 12px;
 }
 
+/* mini menu */
+.menu-mini-menu-container,.menu-mini-menu-german-container{
+	position: absolute;
+	z-index: 12000;
+	left: 20px;
+	top: 80px;
+	font-family: Oswald, sans-serif;
+	font-weight: 300;
+	letter-spacing: 1.5px;
+	font-size: 15px;
+}
+.menu-mini-menu-container li,.menu-mini-menu-german-container li{
+	text-transform: lowercase;
+	display: inline;
+	margin-right: 5px;
+	padding-right: 8px;
+	border-right: 1px solid #fff;
+}
+.menu-mini-menu-container li:last-child, .menu-mini-menu-german-container li:last-child{
+	border:none;
+}
+.menu-mini-menu-container li > a,.menu-mini-menu-german-container li > a{
+	color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -158,3 +158,6 @@ if($headerS['header_topbar'] == true)
 
 <!-- end header -->
 </header>
+<?php wp_nav_menu( array(
+		'menu'	=> 'Mini Menu',
+	) ); ?> 
