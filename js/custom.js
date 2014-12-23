@@ -71,24 +71,24 @@ $(document).ready(function(){
 					rgb[2] += Math.round(diff[2]);
 				})
 				
-				function componentToHex(c) {
-				    var hex = c.toString(16);
-				    return hex.length == 1 ? "0" + hex : hex;
-				}
-
-				function rgbToHex(r, g, b) {
-				    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-				}
-				function hexToRgb(hex) {
-				    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-				    return result ? {
-				        r: parseInt(result[1], 16),
-				        g: parseInt(result[2], 16),
-				        b: parseInt(result[3], 16)
-				    	} : null;
-				}
-
 			}
+		}
+
+		function componentToHex(c) {
+		    var hex = c.toString(16);
+		    return hex.length == 1 ? "0" + hex : hex;
+		}
+
+		function rgbToHex(r, g, b) {
+		    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+		}
+		function hexToRgb(hex) {
+		    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		    return result ? {
+		        r: parseInt(result[1], 16),
+		        g: parseInt(result[2], 16),
+		        b: parseInt(result[3], 16)
+		    	} : null;
 		}
 
 		$('.av-submenu-container').not('#footer-menu-bw').find(' > div').each(function(){
@@ -105,7 +105,7 @@ $(document).ready(function(){
 
 	var base_color_picture_captions = function(){
 //			css({'background': '#cd0'});
-		$('.avia-caption-title,.wp-caption-text').each(function(){
+		$('.avia-caption-title,.wp-caption-text,input.button').each(function(){
 			var parentSection = $(this).closest('.avia-section').prevAll('.av-submenu-container').first();
 			$(this).css({'background': $(parentSection).find('.container').data('color_start')});
 //			console.log($(this).parents('.avia-section').prevAll('.av-submenu-container').find('.av-menu-mobile-disabled').data('color_selection'));
