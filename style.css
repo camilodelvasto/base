@@ -171,6 +171,12 @@ p{
 	text-decoration: underline !important;
 }
 
+@media only screen and (max-width: 767px){
+	h1{
+		font-size:6em !important;
+	}
+}
+
 /* tab element styling */
 .tabcontainer {
 }
@@ -349,7 +355,7 @@ footer.container_wrap.socket_color{
 
 /* mini menu */
 
-@media only screen and (max-width: 989px)
+@media only screen and (max-width: 989px){
 	.html_mobile_menu_tablet .container #advanced_menu_toggle, .html_mobile_menu_tablet #advanced_menu_hide {
 		display: none !important;
 	}
