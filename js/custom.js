@@ -100,7 +100,7 @@ $(document).ready(function(){
 				color_end =  '#dd22aa';
 			}
 			base_colored_menu($(this),color_start,color_end);
-		})
+		});
 	}();
 
 	var base_color_picture_captions = function(){
@@ -116,7 +116,24 @@ $(document).ready(function(){
 			var href =$(this).find('a').attr('href'); 
 			if(href == '#') $(this).hide();
 			return;
-		})
+		});
+	}();
+
+	var base_display_full_menu = function(){
+		if ($('#base-full-menu')){
+			$('<div class="base-full-menu-trigger">&#9776;</div>').insertBefore('#base-full-menu');
+		}
+		$('.base-full-menu-trigger').click(function(){
+			$('.overlay-menu').toggle();
+			if($('.overlay-menu').is(':visible')){
+				$('.base-full-menu-trigger').html('&#10005;');
+			} else {
+				$('.base-full-menu-trigger').html('&#9776;');
+			}
+		});
+		$(document).keyup(function(e){
+			if (e.keyCode == 27 && $('.overlay-menu').is(':visible')) $('.overlay-menu').hide();
+		});
 	}();
 });
 

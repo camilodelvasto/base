@@ -13,12 +13,6 @@ if(isset($headerS['disabled'])) return;
 
 <?php
 
-if($responsive)
-{
-	echo '<a id="advanced_menu_toggle" href="#" '.av_icon_string('mobile_menu').'></a>';
-	echo '<a id="advanced_menu_hide" href="#" 	'.av_icon_string('close').'></a>';
-}
-
 
 //subheader, only display when the user chooses a social header
 if($headerS['header_topbar'] == true)
@@ -159,5 +153,14 @@ if($headerS['header_topbar'] == true)
 <!-- end header -->
 </header>
 <?php wp_nav_menu( array(
+		'menu'		=> 'Full Menu',
+		'container_id'	=> 'base-full-menu',
+		'container_class'	=> 'overlay-menu',
+		'fallback_cb' 	=> false
+	) );
+?> 
+<?php wp_nav_menu( array(
 		'menu'	=> 'Mini Menu',
-	) ); ?> 
+		'container_id'	=> 'base-mini-menu'
+	) );
+?> 
