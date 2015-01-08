@@ -128,7 +128,7 @@ Template: enfold
 }
 /* font styles */
 h1,h2,h3,h4{
-	font-family: Oswald, sans-serif;
+	font-family: Oswald, sans-serif !important;
 }
 h1{
 	font-size:10em;
@@ -219,7 +219,7 @@ div .main_color .tabcontainer .active_tab{
 	padding:0;
 }
 #footer .widgettitle{
-	font-family: 'Open sans', sans-serif;
+	font-family: 'Open sans', sans-serif !important;
 	color: #000 !important;
 	text-transform: none;
 	letter-spacing: 0;
@@ -292,7 +292,7 @@ footer.container_wrap.socket_color{
 /* content styles */
 #top .wp-caption {
 	border:none !important;
-	margin: 5px 35px 10px 0;
+	margin: 5px 35px 40px 0;
 }
 #top .wp-caption img {
 	border: none;

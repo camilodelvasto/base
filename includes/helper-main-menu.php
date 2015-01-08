@@ -11,6 +11,13 @@ if(isset($headerS['disabled'])) return;
 
 <header id='header' class=' header_color <?php avia_is_dark_bg('header_color'); echo " ".$headerS['header_class']; ?>' <?php avia_markup_helper(array('context' => 'header','post_type'=>'forum'));?>>
 
+<?php 
+ // Custom widget Area Start
+ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('mobile menu') ) : ?>
+<?php endif;
+// Custom widget Area End
+?>
+
 <?php
 
 
