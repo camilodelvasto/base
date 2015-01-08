@@ -10,9 +10,9 @@ var $ = jQuery.noConflict();
 $(document).ready(function(){
 
 
-	var aChildren = $(".av-submenu-container").find('li').children(); // find the a children of the list items
+	var aChildren = $(".av-submenu-container").find('li').children(); // find the children of the list items
 	var aArray = []; // create the empty aArray
-	for (var i=0; i < aChildren.length; i++) {    
+	if (aChildren !== null) for (var i=0; i < aChildren.length; i++) {    
 		var aChild = aChildren[i];
 		var ahref = $(aChild).attr('href');
 		if(ahref.indexOf('http') !== 0) aArray.push(ahref);
