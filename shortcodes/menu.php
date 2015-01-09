@@ -88,6 +88,13 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 						"std" 	=> "true",
 						"type" 	=> "checkbox"),
 						
+				    array(	
+						"name" 	=> __("Tabs-like Menu", 'avia_framework' ),
+						"desc" 	=> __("If checked the menu will behave as a tab element", 'avia_framework' ) ,
+						"id" 	=> "tabmenu",
+						"std" 	=> "false",
+						"type" 	=> "checkbox"),
+
 	              	 array(	
 						"name" 	=> __("Mobile Menu Display",'avia_framework' ),
 						"desc" 	=> __("How do you want to display the menu on mobile devices",'avia_framework' ),
@@ -196,6 +203,7 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 				'menu'			=> '',
 				'position'	 	=> 'center',
 				'sticky'		=> '',
+				'tabmenu'		=> '',
 				'color'			=> 'main_color',
 				'color_selection'			=> 'default',
 				'mobile'		=> 'disabled',
@@ -230,6 +238,11 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 					$sticky_div = "<div class='sticky_placeholder'></div>";
 				}
 				
+				if($tabmenu && $tabmenu != "enabled") 
+				{
+					$params['class'] .= " base-tabmenu";
+				}
+
 				//we dont need a closing structure if the element is the first one or if a previous fullwidth element was displayed before
 				if(isset($meta['index']) && $meta['index'] == 0) $params['close'] = false;
 				if(!empty($meta['siblings']['prev']['tag']) && in_array($meta['siblings']['prev']['tag'], AviaBuilder::$full_el_no_section )) $params['close'] = false;
