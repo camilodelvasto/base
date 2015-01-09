@@ -240,7 +240,7 @@ if ( !class_exists( 'avia_sc_submenu' ) )
 				
 				if($tabmenu && $tabmenu != "enabled") 
 				{
-					$params['class'] .= " base-tabmenu";
+					$params['class'] .= " base-fancy-tabmenu";
 				}
 
 				//we dont need a closing structure if the element is the first one or if a previous fullwidth element was displayed before

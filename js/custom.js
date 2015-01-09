@@ -10,7 +10,7 @@ var $ = jQuery.noConflict();
 $(document).ready(function(){
 
 
-	var aChildren = $(".av-submenu-container").find('li').children(); // find the children of the list items
+	var aChildren = $(".av-submenu-container:not(.base-fancy-tabmenu)").find('li').children(); // find the children of the list items
 	var aArray = []; // create the empty aArray
 	if (aChildren !== null) for (var i=0; i < aChildren.length; i++) {    
 		var aChild = aChildren[i];
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		var windowHeight = $(window).height(); // get the height of the window
 		var docHeight = $(document).height();
 
-		for (var i=0; i < aArray.length; i++) {
+		if (aArray !== null) for (var i=0; i < aArray.length; i++) {
 			var theID = aArray[i];
 			if ($(theID).length) var divPos = $(theID).offset().top-70; // get the offset of the div from the top of page
 			var divHeight = $(theID).height(); // get the height of the div in question
@@ -35,7 +35,7 @@ $(document).ready(function(){
 		}
 
 		if(windowPos + windowHeight == docHeight) {
-			if (!$(".av-submenu-container li:last-child a").hasClass("nav-active")) {
+			if (!$(".av-submenu-container").find("li:last-child a").hasClass("nav-active")) {
 				var navActiveCurrent = $(".nav-active").attr("href");
 				$("a[href='" + navActiveCurrent + "']").removeClass("nav-active");
 				$(".av-submenu-container li:last-child a").addClass("nav-active");
@@ -135,5 +135,33 @@ $(document).ready(function(){
 			if (e.keyCode == 27 && $('.overlay-menu').is(':visible')) $('.overlay-menu').hide();
 		});
 	}();
+
+	var base_fancy_tabmenu_toggle_items = function(){
+		hide_items();
+		$('.base-fancy-tabmenu').find('a').click(function(event) {
+			event.preventDefault();
+			hide_items();
+			var targetID = $(this).attr('href');
+			$(targetID).show();
+		});
+
+
+		function hide_items(){
+			$('.base-fancy-tabmenu').each(function() {
+				var aChildren = $(this).find('li').children(); // find the children of the list items
+				var aArray = []; // create the empty aArray
+				if (aChildren !== null) for (var i=0; i < aChildren.length; i++) {    
+					var aChild = aChildren[i];
+					var ahref = $(aChild).attr('href');
+					if(ahref.indexOf('http') !== 0) aArray.push(ahref);
+				} // this for loop fills the aArray with attribute href values
+				if (aArray !== null) for (var i=0; i < aArray.length; i++) {
+					$(aArray[i]).hide(); // hide the content items
+				}
+			});
+		}
+	}();
+
+
 });
 
