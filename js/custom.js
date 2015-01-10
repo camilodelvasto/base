@@ -132,7 +132,10 @@ $(document).ready(function(){
 			}
 		});
 		$(document).keyup(function(e){
-			if (e.keyCode == 27 && $('.overlay-menu').is(':visible')) $('.overlay-menu').hide();
+			if (e.keyCode == 27 && $('.overlay-menu').is(':visible')) {
+				$('.overlay-menu').hide();
+				$('.base-full-menu-trigger').html('&#9776;');
+			}
 		});
 	}();
 
