@@ -10,15 +10,18 @@ var $ = jQuery.noConflict();
 $(document).ready(function(){
 
 
-	var aChildren = $(".av-submenu-container:not(.base-fancy-tabmenu)").find('li').children(); // find the children of the list items
+	// this method adds the class nav-active to the current menu item, based on the scrollTop value
+	var aChildren = $(".av-submenu-container").find('li').children(); // find the children of the list items
 	var aArray = []; // create the empty aArray
 	if (aChildren !== null) for (var i=0; i < aChildren.length; i++) {    
 		var aChild = aChildren[i];
 		var ahref = $(aChild).attr('href');
 		if(ahref.indexOf('http') !== 0) aArray.push(ahref);
 	} // this for loop fills the aArray with attribute href values
-
 	$(window).scroll(function(){
+
+
+
 		var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
 		var windowHeight = $(window).height(); // get the height of the window
 		var docHeight = $(document).height();
@@ -28,7 +31,7 @@ $(document).ready(function(){
 			if ($(theID).length) var divPos = $(theID).offset().top-70; // get the offset of the div from the top of page
 			var divHeight = $(theID).height(); // get the height of the div in question
 			if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
-				$("a[href='" + theID + "']").addClass("nav-active");
+				if ($(theID).css('position') == 'static') $("a[href='" + theID + "']").addClass("nav-active");
 			} else {
 				$("a[href='" + theID + "']").removeClass("nav-active");
 			}
@@ -138,15 +141,26 @@ $(document).ready(function(){
 
 	var base_fancy_tabmenu_toggle_items = function(){
 		hide_items();
-		$('.base-fancy-tabmenu').find('a').click(function(event) {
-			event.preventDefault();
-			hide_items();
-			$(this).parents('.base-fancy-tabmenu').find('a').removeClass('nav-active');
-			var targetID = $(this).attr('href');
-			$(targetID).css({'position':'static','z-index':'10000'});
-			$(this).addClass('nav-active');
+		// open first child on ready
+		$('.base-fancy-tabmenu').each(function(){
+			if($(this).find('li:first-child a').attr('href').indexOf('http') !== 0){
+				show_items($(this).find('li:first-child a'));
+			}
 		});
 
+		// toggle the positioning of the selected item
+		$('.base-fancy-tabmenu').find('a').click(function(event) {
+			show_items(this);
+		});
+
+		function show_items(thisObj){
+			event.preventDefault();
+			hide_items();
+			$(thisObj).parents('.base-fancy-tabmenu').find('a').removeClass('nav-active');
+			var targetID = $(thisObj).attr('href');
+			$(targetID).css({'position':'static','z-index':'10000'});
+			$(thisObj).addClass('nav-active');
+		}
 
 		function hide_items(){
 			$('.base-fancy-tabmenu').each(function() {
