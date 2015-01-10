@@ -19,9 +19,6 @@ $(document).ready(function(){
 		if(ahref.indexOf('http') !== 0) aArray.push(ahref);
 	} // this for loop fills the aArray with attribute href values
 	$(window).scroll(function(){
-
-
-
 		var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
 		var windowHeight = $(window).height(); // get the height of the window
 		var docHeight = $(document).height();
@@ -144,17 +141,25 @@ $(document).ready(function(){
 		// open first child on ready
 		$('.base-fancy-tabmenu').each(function(){
 			if($(this).find('li:first-child a').attr('href').indexOf('http') !== 0){
-				show_items($(this).find('li:first-child a'));
+				show_item($(this).find('li:first-child a'));
 			}
 		});
 
-		// toggle the positioning of the selected item
+		// toggle the positioning of the current element on the url (when page is loaded)
+		function scroll_hash() {
+			var urlHash = window.location.hash;
+			if (urlHash) {
+				$("a[href$='"+urlHash+"']").trigger('click');
+			}
+		}
+		setTimeout(scroll_hash,100);
+
+		// toggle the positioning of a clicked item
 		$('.base-fancy-tabmenu').find('a').click(function(event) {
-			show_items(this);
+			show_item(this);
 		});
 
-		function show_items(thisObj){
-			event.preventDefault();
+		function show_item(thisObj){
 			hide_items();
 			$(thisObj).parents('.base-fancy-tabmenu').find('a').removeClass('nav-active');
 			var targetID = $(thisObj).attr('href');
