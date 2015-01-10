@@ -141,8 +141,10 @@ $(document).ready(function(){
 		$('.base-fancy-tabmenu').find('a').click(function(event) {
 			event.preventDefault();
 			hide_items();
+			$(this).parents('.base-fancy-tabmenu').find('a').removeClass('nav-active');
 			var targetID = $(this).attr('href');
-			$(targetID).show();
+			$(targetID).css({'position':'static','z-index':'10000'});
+			$(this).addClass('nav-active');
 		});
 
 
@@ -156,7 +158,7 @@ $(document).ready(function(){
 					if(ahref.indexOf('http') !== 0) aArray.push(ahref);
 				} // this for loop fills the aArray with attribute href values
 				if (aArray !== null) for (var i=0; i < aArray.length; i++) {
-					$(aArray[i]).hide(); // hide the content items
+					$(aArray[i]).css({'position':'absolute','z-index':'-10000'}); // hide the content items
 				}
 			});
 		}
