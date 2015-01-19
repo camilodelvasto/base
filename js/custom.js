@@ -140,9 +140,9 @@ $(document).ready(function(){
 	}();
 
 	var base_fancy_tabmenu_toggle_items = function(){
-		hide_items();
 		// open first child on ready
 		$('.base-fancy-tabmenu').each(function(){
+			hide_items($(this).not('#footer-menu-bw'));
 			if($(this).find('li:first-child a').attr('href').indexOf('http') !== 0){
 				show_item($(this).find('li:first-child a'));
 			}
@@ -163,16 +163,16 @@ $(document).ready(function(){
 		});
 
 		function show_item(thisObj){
-			hide_items();
+			hide_items($(thisObj).parents('.base-fancy-tabmenu'));
 			$(thisObj).parents('.base-fancy-tabmenu').find('a').removeClass('nav-active');
 			var targetID = $(thisObj).attr('href');
 			$(targetID).css({'position':'static','z-index':'10000'});
 			$(thisObj).addClass('nav-active');
 		}
 
-		function hide_items(){
-			$('.base-fancy-tabmenu').each(function() {
-				var aChildren = $(this).find('li').children(); // find the children of the list items
+		function hide_items(thisObj){
+			if($(thisObj)){
+				var aChildren = $(thisObj).find('li').children(); // find the children of the list items
 				var aArray = []; // create the empty aArray
 				if (aChildren !== null) for (var i=0; i < aChildren.length; i++) {    
 					var aChild = aChildren[i];
@@ -182,7 +182,7 @@ $(document).ready(function(){
 				if (aArray !== null) for (var i=0; i < aArray.length; i++) {
 					$(aArray[i]).css({'position':'absolute','z-index':'-10000'}); // hide the content items
 				}
-			});
+			}
 		}
 	}();
 
