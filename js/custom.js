@@ -185,7 +185,13 @@ $(document).ready(function(){
 			}
 		}
 	}();
-
+/*
+	var base_add_title_mobile_section = function(){
+		$('.html_mobile_menu_tablet').find('.avia-section').each(function(){
+			console.log($(this).attr('id'));
+		})
+	}
+*/
 
 });
 

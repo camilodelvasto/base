@@ -458,7 +458,11 @@ footer.container_wrap.socket_color{
 }
 
 
-
+/*
+.html_mobile_menu_tablet #top .avia-section {
+	display:block;
+	position: static !important;
+}
 
 
 
