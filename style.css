@@ -121,11 +121,6 @@ Template: enfold
 }
 
 
-@media only screen and  (max-device-width : 768px) {
-	#top .av-submenu-container{
-		display:none !important;
-	}
-}
 /* font styles */
 h1,h2,h3,h4{
 	font-family: Oswald, sans-serif !important;
@@ -458,11 +453,36 @@ footer.container_wrap.socket_color{
 }
 
 
-/*
-.html_mobile_menu_tablet #top .avia-section {
-	display:block;
-	position: static !important;
-}
+@media only screen and (max-width: 490px){
+	.html_stretched.responsive #top .av-submenu-container {
+	   display: block !important; 
+	}
+
+	.responsive #top .av-submenu-container {
+	   position: !important; 
+	   top: 0 !important; 
+	}
+
+	.avia-mobile #top .av-subnav-menu > li{
+	    padding-left: 0;
+	    width: auto;
+	}
+
+	#top .av-subnav-menu > li {
+	  padding: 0;
+	  background: #d2a;
+	  /* padding-left: 10px; */
+	  margin-right: -5px;
+	  width: auto;
+
+	/*
+	.html_mobile_menu_tablet #top .avia-section {
+		display:block;
+		position: static !important;
+	}
+
+
+} 
 
 
 
