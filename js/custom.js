@@ -112,7 +112,7 @@ $(document).ready(function(){
 	}();
 
 	var base_remove_current_language = function(){
-		$('.menu-mini-menu-container li,.menu-mini-menu-german-container li').each(function(){
+		$('.menu-mini-menu-container li,.menu-mini-menu-german0-container li').each(function(){
 			var href =$(this).find('a').attr('href'); 
 			if(href == '#') $(this).hide();
 			return;
@@ -184,6 +184,24 @@ $(document).ready(function(){
 				}
 			}
 		}
+		var base_tweak_menu_mobile = function(){
+			if($('html').hasClass('avia-iphone')){
+				var aChildren = $(".av-submenu-container").not('#footer-menu-bw').find('li').children(); // find the children of the list items
+				var aArray = []; // create the empty aArray
+				if (aChildren !== null) for (var i=0; i < aChildren.length; i++) {    
+					var aChild = aChildren[i];
+					var ahref = $(aChild).attr('href');
+					if(ahref.indexOf('http') !== 0) aArray.push(ahref);
+				} // this for loop fills the aArray with attribute href values
+
+				// do it for each menu
+				// explore the menu and build an array with hashes and labels
+				// find the hash and prepend the label as h2
+				// remove the position:absolute / hide option for mobile phones
+				// create a mobile menu for each section
+				// ensure the section is reachable via url
+			}
+		}();
 	}();
 
 });
