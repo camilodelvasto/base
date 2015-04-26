@@ -44,7 +44,7 @@ $(document).ready(function(){
 	});
 
 
-	// attach a copy of the first menu to the fotter
+	// attach a copy of the first menu to the fotter (function disabled at the moment)
 	var base_clone_main_menu_footer = function(){
 		if('.av-submenu-container'){
 			var newMenu = $('.av-submenu-container').first().clone();
@@ -52,7 +52,7 @@ $(document).ready(function(){
 			$(newMenu).removeClass('av-sticky-submenu');
 			$(newMenu).prependTo('#footer');
 		}
-	}();
+	};
 
 	var base_color_menu_cards = function(){
 		var base_colored_menu = function(menuID,hexStart,hexEnd){
