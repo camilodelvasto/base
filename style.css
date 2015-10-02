@@ -23,7 +23,7 @@ Template: enfold
 }
 
 .logo{
-	left: 50% ; 
+	left: 50% ;
 	-webkit-transform: translate(-50%, 0);
 	-moz-transform: translate(-50%, 0);
 	-ms-transform: translate(-50%, 0);
@@ -434,7 +434,6 @@ footer.container_wrap.socket_color{
 #base-full-menu ul.sub-menu li {
 	display:inline-block;
 	margin-bottom:0;
-	margin-right:;
 }
 #base-full-menu ul.sub-menu li a{
 	font-family: 'Open sans', sans-serif !important;
@@ -452,15 +451,23 @@ footer.container_wrap.socket_color{
 	margin:0;
 }
 
+@media only screen and (max-height: 600px){
+	#base-full-menu ul,#base-full-menu ul.menu li{
+		margin-bottom:5px;
+	}
+	#base-full-menu ul.sub-menu li {
+		line-height:14px;
+	}
+}
 
 @media only screen and (max-width: 490px){
 	.html_stretched.responsive #top .av-submenu-container {
-	   display: block !important; 
+	   display: block !important;
 	}
 
 	.responsive #top .av-submenu-container {
-	   position: !important; 
-	   top: 0 !important; 
+	   position: !important;
+	   top: 0 !important;
 	}
 
 	.avia-mobile #top .av-subnav-menu > li{
@@ -482,17 +489,4 @@ footer.container_wrap.socket_color{
 	}
 
 
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
