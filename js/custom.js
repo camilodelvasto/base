@@ -205,7 +205,7 @@ $(document).ready(function(){
 	}();
 
 	// new lines for solving issues with non-responsive menu
-	if ($(window).width() < 580 ){
+	if ($(window).width() < 780 ){
 	  $(".av-subnav-menu").each(function(){
 	    var temp = 0;
 	    $(this).children('li').each(function(){
