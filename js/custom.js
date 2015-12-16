@@ -204,5 +204,20 @@ $(document).ready(function(){
 		}();
 	}();
 
+	// new lines for solving issues with non-responsive menu
+	if ($(window).width() < 580 ){
+	  $(".av-subnav-menu").each(function(){
+	    var temp = 0;
+	    $(this).children('li').each(function(){
+	      temp += $(this).width()+9;
+	    });
+	    $(this).css("width",temp);
+	    $(this).parent().css({"overflow":"scroll", "background": "transparent"});
+	    $(this).parents(".av-menu-mobile-disabled").css({"width":"100%", "max-width":"100%"});
+	  })
+	  $(".menu_supplement").remove();
+	}
+
+
 });
 
