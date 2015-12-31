@@ -209,9 +209,9 @@ $(document).ready(function(){
 	  $(".av-subnav-menu").each(function(){
 	    var temp = 0;
 	    $(this).children('li').each(function(){
-	      temp += $(this).width()+9;
+	      temp += 120;
 	    });
-	    $(this).css("width",temp);
+	    $(this).css("width",temp+'px');
 	    $(this).parent().css({"overflow":"scroll", "background": "transparent"});
 	    $(this).parents(".av-menu-mobile-disabled").css({"width":"100%", "max-width":"100%"});
 	  })

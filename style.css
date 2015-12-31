@@ -472,7 +472,6 @@ footer.container_wrap.socket_color{
 
 	.avia-mobile #top .av-subnav-menu > li{
 	    padding-left: 0;
-	    width: auto;
 	}
 
 	#top .av-subnav-menu > li {
@@ -480,7 +479,6 @@ footer.container_wrap.socket_color{
 	  background: #d2a;
 	  /* padding-left: 10px; */
 	  margin-right: -5px;
-	  width: auto;
 
 	/*
 	.html_mobile_menu_tablet #top .avia-section {
